@@ -547,15 +547,15 @@
 				effectVignette.uniforms[ "offset" ].value = 0.95;
 				effectVignette.uniforms[ "darkness" ].value = 1.6;
 				var effectFocus = new THREE.ShaderPass( THREE.FocusShader );		
-				composer.addPass( effectFocus );
+				//composer.addPass( effectFocus );
 				effectCopy.renderToScreen = false;
-				composer.addPass( hblur );
-				composer.addPass( vblur );
+				//composer.addPass( hblur );
+				//composer.addPass( vblur );
 				composer.addPass( effectBleach );
 				composer.addPass( effectVignette );
 				effectVignette.renderToScreen = true;
-				effectFocus.renderToScreen = true;
-				effectFilm.renderToScreen = true;
+				effectFocus.renderToScreen = false;
+				effectFilm.renderToScreen = false;
 				effectBleach.renderToScreen = false;
 				
 				simulator = new SimulationRenderer(WIDTH, renderer);
